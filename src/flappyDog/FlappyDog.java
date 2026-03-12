@@ -1,10 +1,11 @@
 package flappyDog;
 
+import java.util.*;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.Color;
 
 public class FlappyDog extends JFrame {
 
@@ -31,12 +32,14 @@ public class FlappyDog extends JFrame {
 	 * Create the frame.
 	 */
 	public FlappyDog() {
+		setTitle("FlappyDog");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 360, 640);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-System.out.println("prueba");
 	}
 	
 
