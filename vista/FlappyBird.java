@@ -1,17 +1,16 @@
-package flappyDog;
-
-import java.util.*;
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Color;
+import java.awt.BorderLayout;
 
-public class FlappyDog extends JFrame {
+
+public class FlappyBird extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
+	private AreaJuego areaJuego;
 	/**
 	 * Launch the application.
 	 */
@@ -19,7 +18,7 @@ public class FlappyDog extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FlappyDog frame = new FlappyDog();
+					FlappyBird frame = new FlappyBird();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,17 +30,24 @@ public class FlappyDog extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FlappyDog() {
-		setTitle("FlappyDog");
+	public FlappyBird() {
 		setResizable(false);
+		setTitle("FlappyBird");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 360, 640);
+		setBounds(50, 50, 1600, 900);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-	}
-	
+		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		areaJuego = new AreaJuego();
+		contentPane.add(areaJuego, BorderLayout.CENTER);
+		
+		JPanel areaJuegos = new JPanel();
+		contentPane.add(areaJuegos, BorderLayout.NORTH);
+		areaJuego.setFocusable(true);
+		areaJuego.requestFocus();
 
-	
+	}
+
 }
